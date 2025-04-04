@@ -1,8 +1,8 @@
 # Baseball-misc
 Hosting miscellaneous baseball datasets etc.
 
-I rarely write original code but when I do it will be indicated, and is licensed as per included license terms (GPLv3).
-Original content is Copyright (C) 2025; Please credit the repo or https://annies.bearblog.dev
+I rarely write original code but when I do it will be indicated.  
+Original content is Copyright (C) 2025; Please credit the repo or https://annies.bearblog.dev; and is licensed as per included license terms (GPLv3).
 
 Credit to:  
 Retrosheet  
