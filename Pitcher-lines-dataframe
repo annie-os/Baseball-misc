@@ -1,0 +1,15 @@
+# Using R to generate game-level pitcher data in a workable file format using Retrosheet data and baseball.computer query.
+# Create a database file on disk
+con <- dbConnect(duckdb(), dbdir = "databasename.db")
+# Enable remote access
+dbExecute(con, "INSTALL httpfs")
+dbExecute(con, "LOAD httpfs")
+# This ATTACH command only needs to be run once on an existing database and will fail
+# if run twice, but you can safely ignore the error in that case
+dbExecute(con, "ATTACH 'https://data.baseball.computer/dbt/bc_remote.db' (READ_ONLY)")
+dbExecute(con, "USE bc_remote")
+dbExecute(con, "USE main_models")
+# Generate data frame
+DataFrameName <- dbGetQuery(con, "SELECT * FROM player_game_pitching_stats")
+# View the data frame
+View(DataFrameName)
